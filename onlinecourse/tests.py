@@ -51,3 +51,10 @@ class ExamFlowTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Python Basics")
         self.assertContains(response, "Variables")
+
+    def test_learner_can_sign_in_without_admin_access(self):
+        response = self.client.post(
+            reverse("login"),
+            {"username": "learner", "password": "test-pass"},
+        )
+        self.assertRedirects(response, reverse("course_list"))
