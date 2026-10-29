@@ -11,12 +11,10 @@
     <header class="mb-4">
         {% if passed %}
             <h1 class="text-success">Congratulations!</h1>
-            <p class="lead">You passed the mock exam.</p>
         {% else %}
-            <h1 class="text-danger">Keep practicing</h1>
-            <p class="lead">Review the answers and try again.</p>
+            <h1 class="text-primary">Exam results</h1>
         {% endif %}
-        <p class="fs-4">Score: <strong>{{ score }} / {{ possible_score }}</strong> ({{ percentage }}%)</p>
+        <p class="fs-4">Score: <strong>{{ grade }} / {{ possible }}</strong></p>
         <p class="text-secondary">{{ course.name }}</p>
     </header>
     <h2 class="h4 mb-3">Exam results</h2>
